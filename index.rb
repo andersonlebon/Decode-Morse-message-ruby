@@ -41,3 +41,21 @@ def decode_char(letter)
     }
     return dictionary[letter]
 end
+
+def words_separator(completestring)
+    return completestring.split("   ");
+end
+
+def decode_word(array)
+    result = "";
+    array.each { |n| 
+    temp = n.split(" ");
+    temp.each{ |m|
+        result += decode_char(m);
+    }
+    result += " ";
+}
+puts(result)
+end
+
+decode_word(words_separator(".-   -... --- -..-   ..-. ..- .-.. .-..   --- ..-. / .-. ..- -... .. . ..."))
